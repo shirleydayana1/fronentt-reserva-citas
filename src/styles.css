@@ -1265,6 +1265,7 @@ select {
     background-color: #7f8c8d;
 }
 
+
 /* Responsive para botones */
 @media (max-width: 768px) {
     .btn-group {
