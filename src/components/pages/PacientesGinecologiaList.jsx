@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import TablaPacientesGinecologia from "../organisms/TablaPacientesGinecologia";
+import TablaPacientes from "../organisms/TablaPacientesGinecologia";
 
-export default function GinecologiaPacientesList() {
+export default function PacientesGinecologiaList() {
     const [patients, setPatients] = useState(() => {
-        const storedPatients = localStorage.getItem("ginecologiaPatients");
+        const storedPatients = localStorage.getItem("patients");
         return storedPatients ? JSON.parse(storedPatients) : [];
     });
 
@@ -11,9 +11,10 @@ export default function GinecologiaPacientesList() {
     const [editForm, setEditForm] = useState({});
 
     const eliminarPaciente = (index) => {
-        if (window.confirm("¿Está seguro de eliminar este paciente?")) {
+        const confirmacion = window.confirm("¿Está seguro de eliminar este paciente?");
+        if (confirmacion) {
             const updated = patients.filter((_, i) => i !== index);
-            localStorage.setItem("ginecologiaPatients", JSON.stringify(updated));
+            localStorage.setItem("patients", JSON.stringify(updated));
             setPatients(updated);
         }
     };
@@ -26,7 +27,7 @@ export default function GinecologiaPacientesList() {
     const guardarEdicion = (index) => {
         const updated = [...patients];
         updated[index] = editForm;
-        localStorage.setItem("ginecologiaPatients", JSON.stringify(updated));
+        localStorage.setItem("patients", JSON.stringify(updated));
         setPatients(updated);
         setEditingIndex(null);
         setEditForm({});
@@ -41,20 +42,26 @@ export default function GinecologiaPacientesList() {
         setEditForm({ ...editForm, [e.target.name]: e.target.value });
     };
 
+    const volver = () => {
+        window.history.back();
+    };
+
     return (
-        <div className="pacientes-list-container">
-            <div className="pacientes-header">
-                <h1>Lista de Pacientes de Ginecología</h1>
-                <button onClick={() => window.history.back()} className="btn-volver">
+        <div className="pacientes-ginecologia-container">
+            <div className="pacientes-ginecologia-header">
+                <h1>Lista de Pacientes Ginecologia</h1>
+                <button onClick={volver} className="boton-volver">
                     ← Volver
                 </button>
             </div>
 
             {patients.length === 0 ? (
-                <p>📋 No hay pacientes registrados</p>
+                <div className="not-pacientes">
+                    <p>📋 No hay pacientes registrados</p>
+                </div>
             ) : (
-                <TablaPacientesGinecologia
-                    patients={patients}
+                <TablaPacientes 
+                    patients={patients} 
                     onEliminar={eliminarPaciente}
                     onEditar={editarPaciente}
                     editingIndex={editingIndex}
