@@ -1,15 +1,16 @@
-import React, { useState } from "react";
 import TablaPacientesGinecologia from "../organisms/TablaPacientesGinecologia";
 import { useNavigate } from "react-router-dom";
 
 export default function PacientesGinecologiaList() {
     const navigate = useNavigate();
 
-    const [patients] = useState(() => {
-        const data =
-            JSON.parse(localStorage.getItem("ginecologia_patients")) || [];
-        return data.slice(0, 80);
-    });
+    let patients = [];
+    try {
+        const stored = localStorage.getItem("ginecologia_patients");
+        patients = stored ? JSON.parse(stored).slice(0, 80) : [];
+    } catch {
+        patients = [];
+    }
 
     return (
         <div className="pacientes-ginecologia-container">
