@@ -857,6 +857,150 @@ select {
   margin-bottom: 5px;
 }
 
+/* css pacientes registrados/tabla*/
+/* CONTENEDOR GENERAL */
+.pacientes-ginecologia-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.12);
+    font-family: "Poppins", sans-serif;
+}
+
+.pacientes-ginecologia-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.pacientes-ginecologia-header h1 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+.boton-volver {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+.boton-volver:hover {
+    background: #c92a37;
+}
+
+/* Mensaje cuando no hay pacientes */
+.not-pacientes {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TABLA*/
+.tabla-envoltura {
+    width: 100%;
+}
+
+.tabla-ginecontainer {
+    overflow-x: auto;
+}
+
+.tabla-ginepacientes {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.tabla-ginepacientes thead {
+    background: #1d3557;
+    color: white;
+}
+
+.tabla-ginepacientes th,
+.tabla-ginepacientes td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-ginepacientes tr:hover {
+    background: #f8f9fa;
+}
+
+/* FOTO DEL PACIENTE */
+.paciente-foto {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #adb5bd;
+}
+
+/*FOOTER DE LA TABLA */
+.tabla-ginefooter {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 16px;
+    color: #333;
+}
+
+/* BADGE / TIPO DE CITA */
+.badge-tipo-cita {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.tipo-control {
+    background: #a8dadc;
+    color: #1d3557;
+}
+
+.tipo-emergencia {
+    background: #ffb4b4;
+    color: #b00000;
+}
+
+.tipo-primera {
+    background: #ffd166;
+    color: #8c6d00;
+}
+
+.tipo-procedimientos {
+    background: #c8e6c9;
+    color: #1b5e20;
+}
+
+/* RESPONSIVE*/
+@media (max-width: 768px) {
+    .pacientes-ginecologia-header h1 {
+        font-size: 22px;
+    }
+
+    .boton-volver {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    
+    .tabla-ginepacientes th,
+    .tabla-ginepacientes td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+}
 
 
 /* SECCIÓN DE CONSULTORÍA MÉDICA*/
@@ -1009,161 +1153,128 @@ select {
 }
 
 
+/*SECCIÓN DE PACIENTES REGISTRADOS/tabla*/
 
-/* ========== SECCION LISTA DE PACIENTES ========== */
-.pacientes-list-container {
+/* CONTENEDOR GENERAL DE CONSULTORÍA*/
+.pacientes-consultoria-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 25px auto;
     padding: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.12);
+    font-family: "Poppins", sans-serif;
 }
 
-.pacientes-header {
+.pacientes-consultoria-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #4CAF50;
-    padding-bottom: 15px;
+    margin-bottom: 25px;
 }
 
-.pacientes-header h1 {
-    color: #2c3e50;
-    margin: 0;
+.pacientes-consultoria-header h2 {
     font-size: 28px;
+    color: #2d3142;
+    margin: 0;
 }
 
-.btn-volver {
-    padding: 10px 25px;
-    background-color: #3498db;
+.pacientes-consultoria-header button {
+    background: #1d3557;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 14px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-size: 15px;
+    transition: 0.2s;
+}
+.pacientes-consultoria-header button:hover {
+    background: #16324f;
 }
 
-.btn-volver:hover {
-    background-color: #2980b9;
-}
-
+/* Texto cuando no hay pacientes */
 .no-pacientes {
     text-align: center;
-    padding: 60px 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    border: 2px dashed #dee2e6;
-}
-
-.no-pacientes p {
     font-size: 18px;
-    color: #6c757d;
-    margin: 0;
+    padding: 20px;
+    color: #555;
 }
 
-.tabla-wrapper {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-.tabla-container {
-    overflow-x: auto;
-}
-
+/* TABLA CONSULTORÍA*/
 .tabla-pacientes {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 10px;
 }
 
-.tabla-pacientes thead tr {
-    background-color: #4CAF50;
-}
-
-.tabla-pacientes thead th {
-    padding: 15px;
-    text-align: left;
+.tabla-pacientes thead {
+    background: #457b9d;
     color: white;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.tabla-pacientes tbody tr {
-    border-bottom: 1px solid #dee2e6;
+.tabla-pacientes th,
+.tabla-pacientes td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 15px;
 }
 
-.tabla-pacientes tbody tr:nth-child(even) {
-    background-color: #f8f9fa;
+.tabla-pacientes tr:hover {
+    background: #f1f1f1;
 }
 
-.tabla-pacientes tbody tr:nth-child(odd) {
-    background-color: white;
-}
-
-.tabla-pacientes tbody tr:hover {
-    background-color: #e9ecef;
-}
-
-.tabla-pacientes tbody td {
-    padding: 12px 15px;
-    font-size: 14px;
-    color: #2c3e50;
-}
-
-.badge {
-    padding: 5px 12px;
-    border-radius: 20px;
+/* BADGE DE TIPO DE CITA – CONSULTORÍA*/
+.badge-consultoria {
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
     font-size: 13px;
     font-weight: bold;
-    color: white;
-    display: inline-block;
+    text-transform: capitalize;
 }
 
-.badge-control {
-    background-color: #3498db;
+/* Diferentes tipos de cita */
+.consultoria-control {
+    background: #a8dadc;
+    color: #003049;
 }
 
-.badge-emergencia {
-    background-color: #e74c3c;
+.consultoria-emergencia {
+    background: #ffb4b4;
+    color: #8c0000;
 }
 
-.badge-primera-vez {
-    background-color: #9b59b6;
+.consultoria-primera {
+    background: #ffd166;
+    color: #8c6d00;
 }
 
-.badge-procedimientos {
-    background-color: #f39c12;
+.consultoria-procedimientos {
+    background: #c8e6c9;
+    color: #1b5e20;
 }
 
-.btn-eliminar {
-    padding: 8px 16px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+/* RESPONSIVE*/
+@media (max-width: 768px) {
+    .pacientes-consultoria-header h2 {
+        font-size: 22px;
+    }
+
+    .pacientes-consultoria-header button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .tabla-pacientes th,
+    .tabla-pacientes td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
 }
 
-.btn-eliminar:hover {
-    background-color: #c0392b;
-}
-
-.tabla-footer {
-    padding: 15px 20px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #dee2e6;
-    text-align: right;
-    color: #6c757d;
-    font-size: 14px;
-}
 
 /* Responsive */
 @media (max-width: 768px) {

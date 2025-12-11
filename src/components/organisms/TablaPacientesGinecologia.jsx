@@ -9,7 +9,6 @@ export default function TablaPacientesGinecologia({ patients }) {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Foto</th>
                             <th>Nombre</th>
                             <th>Apellidos</th>
                             <th>DNI</th>

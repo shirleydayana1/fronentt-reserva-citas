@@ -17,16 +17,7 @@ export default function FilaPacienteGinecologia({ patient, index }) {
     return (
         <tr>
             <td>{index + 1}</td>
-
-            {/* IMAGEN */}
-            <td>
-                <img
-                    src={patient.foto || "/img/paciente-default.png"}
-                    alt="Paciente"
-                    className="paciente-foto"
-                />
-            </td>
-
+          
             <td>{patient.nombre}</td>
             <td>{patient.apellido}</td>
             <td>{patient.dni}</td>
