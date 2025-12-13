@@ -30,7 +30,7 @@ export default function Navbar({ user, onLogout, onSelect }) {
                     <svg width="20" height="20" viewBox="0 0 24 24">
                         <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-4.4 0-8 3.1-8 7v1h16v-1c0-3.9-3.6-7-8-7z" fill="currentColor" />
                     </svg>
-                    {user?.name || 'Jhanet'}
+                    {user?.name || 'Jhanet Acosta'}
                 </button>
                 <div className={`dropdown ${open ? 'open' : ''}`}>
                     <button onClick={onLogout} className="dropdown-item">Cerrar sesión</button>

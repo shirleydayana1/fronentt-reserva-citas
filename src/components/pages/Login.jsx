@@ -32,7 +32,7 @@ function Login() {
     <div className="login-container">
       <div className="left-panel">
         <img src="/img/logo.png" alt="logo" />
-        <p className="slogan" >Cuidamos de tu bienestar, siempre contigo</p>
+        <p className="slogan" >“Innovación, confianza y un cuidado integral diseñado para cada etapa de tu vida.”</p>
       </div>
 
       <div className="right-panel">
