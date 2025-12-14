@@ -49,7 +49,7 @@ export default function PacientesList() {
     return (
         <div className="pacientes-list-container">
             <div className="pacientes-header">
-                <h1>Lista de Pacientes Pediátricos</h1>
+                <h1>Pacientes de Pediatria</h1>
                 <button onClick={volver} className="btn-volver">
                     ← Volver
                 </button>
@@ -57,7 +57,7 @@ export default function PacientesList() {
 
             {patients.length === 0 ? (
                 <div className="no-pacientes">
-                    <p>📋 No hay pacientes registrados</p>
+                    <p> No hay pacientes registrados</p>
                 </div>
             ) : (
                 <TablaPacientes 

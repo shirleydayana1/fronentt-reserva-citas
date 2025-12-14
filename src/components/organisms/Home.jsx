@@ -19,7 +19,7 @@ export default function Home() {
                     <p className="welcome-desc">
                         Eres el filtro y el conector de toda la clínica. La información fluye gracias a tu atención y profesionalismo. 
                     </p>
-                    <p className="welcome-slogan"> ¡Ten una excelente Día!".</p>
+                    <p className="welcome-slogan"> ¡Ten un excelente Día!</p>
 
                     <input 
                         type="date"

@@ -63,7 +63,7 @@ export default function ConsultoriaMedica() {
     return (
         <div className="consultoria-container">
 
-            {/* IMAGEN */}
+            
             <div className="consultoria-imagen-box">
                 <img
                     src="/img/consultoria.jpg"
@@ -72,7 +72,6 @@ export default function ConsultoriaMedica() {
                 />
             </div>
 
-            {/* CALENDARIO */}
             <div className="calendar-box">
                 <DatePicker
                     selected={new Date()}
@@ -82,7 +81,7 @@ export default function ConsultoriaMedica() {
                 />
             </div>
 
-            {/* FORMULARIO */}
+            
             <div className="form-box">
 
                 <div className="form-row">
@@ -144,7 +143,7 @@ export default function ConsultoriaMedica() {
 
                 <div className="form-buttons">
                     <button onClick={agregarPaciente}>Agregar</button>
-                    <button onClick={verPacientes}>Ver pacientes</button>
+                    <button onClick={verPacientes}>Ver</button>
                 </div>
 
             </div>

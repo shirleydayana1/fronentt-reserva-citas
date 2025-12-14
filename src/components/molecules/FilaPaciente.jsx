@@ -12,7 +12,7 @@ export default function FilaPaciente({
     onGuardar,
     onCancelar
 }) {
-    
+
     const formatearFecha = (fechaHora) => {
         if (!fechaHora) return "No especificada";
         const fecha = new Date(fechaHora);
@@ -29,19 +29,21 @@ export default function FilaPaciente({
         if (!fechaHora) return "";
         const fecha = new Date(fechaHora);
         const year = fecha.getFullYear();
-        const month = String(fecha.getMonth() + 1).padStart(2, '0');
-        const day = String(fecha.getDate()).padStart(2, '0');
-        const hours = String(fecha.getHours()).padStart(2, '0');
-        const minutes = String(fecha.getMinutes()).padStart(2, '0');
+        const month = String(fecha.getMonth() + 1).padStart(2, "0");
+        const day = String(fecha.getDate()).padStart(2, "0");
+        const hours = String(fecha.getHours()).padStart(2, "0");
+        const minutes = String(fecha.getMinutes()).padStart(2, "0");
         return `${year}-${month}-${day}T${hours}:${minutes}`;
     };
 
+
     if (isEditing) {
         return (
-            <tr className="editing-row">
-                <td>{index + 1}</td>
-                <td>
-                    <input 
+            <tr className="fila-paciente editing-row">
+                <td className="col-index">{index + 1}</td>
+
+                <td className="col-text">
+                    <input
                         type="text"
                         name="nombre"
                         value={editForm.nombre}
@@ -49,8 +51,9 @@ export default function FilaPaciente({
                         className="edit-input"
                     />
                 </td>
-                <td>
-                    <input 
+
+                <td className="col-text">
+                    <input
                         type="text"
                         name="apellido"
                         value={editForm.apellido}
@@ -58,8 +61,9 @@ export default function FilaPaciente({
                         className="edit-input"
                     />
                 </td>
-                <td>
-                    <input 
+
+                <td className="col-dni">
+                    <input
                         type="text"
                         name="dni"
                         value={editForm.dni}
@@ -67,8 +71,9 @@ export default function FilaPaciente({
                         className="edit-input"
                     />
                 </td>
-                <td>
-                    <input 
+
+                <td className="col-phone">
+                    <input
                         type="text"
                         name="telefono"
                         value={editForm.telefono}
@@ -76,8 +81,9 @@ export default function FilaPaciente({
                         className="edit-input"
                     />
                 </td>
-                <td>
-                    <input 
+
+                <td className="col-address">
+                    <input
                         type="text"
                         name="direccion"
                         value={editForm.direccion}
@@ -85,8 +91,9 @@ export default function FilaPaciente({
                         className="edit-input"
                     />
                 </td>
-                <td>
-                    <input 
+
+                <td className="col-date">
+                    <input
                         type="datetime-local"
                         name="fechaHora"
                         value={formatearFechaParaInput(editForm.fechaHora)}
@@ -94,8 +101,9 @@ export default function FilaPaciente({
                         className="edit-input"
                     />
                 </td>
-                <td>
-                    <select 
+
+                <td className="col-badge">
+                    <select
                         name="tipoCita"
                         value={editForm.tipoCita}
                         onChange={onEditChange}
@@ -107,7 +115,8 @@ export default function FilaPaciente({
                         <option value="procedimientos">Procedimientos</option>
                     </select>
                 </td>
-                <td>
+
+                <td className="col-actions">
                     <div className="btn-group">
                         <button
                             onClick={() => onGuardar(index)}
@@ -127,19 +136,22 @@ export default function FilaPaciente({
         );
     }
 
+    /* ======================
+       MODO NORMAL
+    ====================== */
     return (
-        <tr>
-            <td>{index + 1}</td>
-            <td>{patient.nombre}</td>
-            <td>{patient.apellido}</td>
-            <td>{patient.dni}</td>
-            <td>{patient.telefono || "N/A"}</td>
-            <td>{patient.direccion || "N/A"}</td>
-            <td>{formatearFecha(patient.fechaHora)}</td>
-            <td>
+        <tr className="fila-paciente">
+            <td className="col-index">{index + 1}</td>
+            <td className="col-text">{patient.nombre}</td>
+            <td className="col-text">{patient.apellido}</td>
+            <td className="col-dni">{patient.dni}</td>
+            <td className="col-phone">{patient.telefono || "N/A"}</td>
+            <td className="col-address">{patient.direccion || "N/A"}</td>
+            <td className="col-date">{formatearFecha(patient.fechaHora)}</td>
+            <td className="col-badge">
                 <BadgeTipoCita tipo={patient.tipoCita} />
             </td>
-            <td>
+            <td className="col-actions">
                 <div className="btn-group">
                     <button
                         onClick={() => onEditar(index)}
