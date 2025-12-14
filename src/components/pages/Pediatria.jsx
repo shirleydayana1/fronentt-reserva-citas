@@ -25,8 +25,18 @@ export default function Pediatria() {
         JSON.parse(localStorage.getItem("patients")) || []
     );
 
+     const [toast, setToast] = useState({ mensaje: "", tipo: "" });
+
+
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const mostrarToast = (mensaje, tipo = "success") => {
+        setToast({ mensaje, tipo });
+        setTimeout(() => {
+            setToast({ mensaje: "", tipo: "" });
+        }, 3000);
     };
 
     const agregarPaciente = () => {
@@ -40,7 +50,7 @@ export default function Pediatria() {
         localStorage.setItem("patients", JSON.stringify(updated));
         setPatients(updated);
 
-        alert("Paciente agregado correctamente");
+        mostrarToast("Paciente agregado correctamente");
 
         setForm({
             nombre: "",
@@ -60,12 +70,18 @@ export default function Pediatria() {
     return (
         <div className="pediatria-container">
 
+            {toast.mensaje && (
+                <div className={`toast ${toast.tipo}`}>
+                    {toast.mensaje}
+                </div>
+            )}
+
             {/* IMAGEN */}
             <div className="pediatria-imagen-box">
                 <img src="/img/pediatria.jpg" alt="Pediatria" className="pediatria-imagen" />
             </div>
 
-            {/* CALENDARIO */}
+           { /* CALENDARIO */}
             <div className="calendar-box">
                 <DatePicker
                     selected={new Date()}

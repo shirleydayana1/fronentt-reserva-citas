@@ -4,6 +4,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Lobster";
   src: url("public/fonts/FiraSans-Bold.ttf") format("truetype");
@@ -17,6 +18,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Amarna-Italic";
   src: url("public/fonts/Amarna-Italic-VariableFont_wght.ttf") format("truetype");
@@ -49,7 +51,7 @@
 }
 
 body {
-  font-family: "Amarna-Italic" ;
+  font-family: "Amarna-Italic";
   background-color: var(--background);
   color: var(--text-primary);
   line-height: 1.6;
@@ -57,14 +59,15 @@ body {
 
 /*SECCIÓN DE LOGIN  */
 .login-container {
-  display: grid; 
+  display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  font-family:"FiraSans" ;
+  font-family: "FiraSans";
   background: linear-gradient(135deg, #dcdfee 0%, #16139b 50%, #f093fb 100%);
   position: relative;
   overflow: hidden;
 }
+
 .login-container,
 .right-panel input,
 .right-panel button {
@@ -73,10 +76,10 @@ body {
 }
 
 .right-panel h2 {
-  font-weight: 700; 
+  font-weight: 700;
 }
 
-/* Efecto de círculos decorativos */
+/* Efecto de círculos */
 .login-container::before {
   position: absolute;
   width: 700px;
@@ -89,7 +92,7 @@ body {
 }
 
 .login-container::after {
- 
+
   position: absolute;
   width: 100px;
   height: 100px;
@@ -160,19 +163,24 @@ body {
   letter-spacing: 0.5px;
   animation: shake 0.9s ease infinite;
 }
+
 @keyframes shake {
   0% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   50% {
     transform: translateX(5px);
   }
+
   75% {
     transform: translateX(-5px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -200,6 +208,7 @@ body {
   position: relative;
   animation: slideIn 0.6s ease-out;
 }
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -338,7 +347,7 @@ body {
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  z-index:500;
+  z-index: 500;
 }
 
 .nav-left {
@@ -382,12 +391,14 @@ body {
   color: var(--primary-color);
   transform: translateY(-2px);
 }
+
 .navbar,
 .nav-links,
 .clinic-name {
   font-family: "RobotoCondensed";
   font-weight: 100;
 }
+
 button {
   font-family: "RobotoCondensed";
   font-weight: 600;
@@ -420,6 +431,7 @@ button {
   border-color: var(--primary-color);
   background-color: var(--surface);
 }
+
 .profile-button svg {
   color: var(--primary-color);
 }
@@ -477,8 +489,6 @@ button {
 }
 
 
-
-
 /* home*/
 .home-background {
   width: 100%;
@@ -488,6 +498,7 @@ button {
   align-items: center;
 
 }
+
 .home-welcome h1 {
   font-family: "Lobter";
   font-weight: 100;
@@ -497,7 +508,8 @@ button {
   font-weight: 600;
   text-align: center;
 }
-.welcome-slogan{
+
+.welcome-slogan {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
@@ -582,6 +594,7 @@ button {
     transform: translateY(25px);
     text-shadow: none;
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -607,18 +620,21 @@ button {
   animation-delay: 0.3s;
   position: center;
 }
+
 @keyframes h2Reveal {
   from {
     opacity: 0;
     transform: translateY(18px);
     letter-spacing: 0px;
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
     letter-spacing: 1px;
   }
 }
+
 .home-welcome-h2::after {
   content: "";
   position: absolute;
@@ -632,12 +648,12 @@ button {
   animation: h2Line 1s ease forwards;
   animation-delay: 0.8s;
 }
+
 @keyframes h2Line {
   to {
     width: 45%;
   }
 }
-
 
 
 /* CALENDARIO */
@@ -664,9 +680,7 @@ button {
   box-shadow: 0 0 6px rgba(40, 90, 255, 0.4);
 }
 
-
 /*SECCION DE PEDIATRIA*/
-
 .pediatria-container {
   display: flex;
   justify-content: space-between;
@@ -686,6 +700,7 @@ button {
   align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .pediatria-imagen-box:hover {
   animation-play-state: paused;
 }
@@ -704,15 +719,13 @@ button {
   transition: all 0.5s ease;
 }
 
-/*formulario*/
-
+/*formulario de pediatria*/
 .form-box {
   order: 1;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
   width: 480px;
-
   opacity: 0;
   animation: formFade 0.9s ease forwards;
 }
@@ -722,6 +735,7 @@ button {
     opacity: 0;
     transform: translateX(-25px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -745,7 +759,7 @@ select {
   transition: all 0.3s ease;
 }
 
-/* Focus profesional */
+
 .form-input:focus,
 .form-row input:focus,
 select:focus {
@@ -763,11 +777,7 @@ select:focus {
 
 .form-buttons button {
   padding: 11px 26px;
-  background: linear-gradient(
-    135deg,
-    #0057b8,
-    #003f82
-  );
+  background: linear-gradient(135deg, #0057b8, #003f82);
   color: white;
   border: none;
   border-radius: 10px;
@@ -776,7 +786,6 @@ select:focus {
   letter-spacing: 0.5px;
   transition: all 0.35s ease;
 }
-
 
 .form-buttons button:hover {
   transform: translateY(-2px);
@@ -787,34 +796,70 @@ select:focus {
   transform: scale(0.97);
 }
 
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 18px 26px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000000;
+
+    box-shadow: 0 15px 35px rgba(5, 5, 5, 0.45);
+    animation: fadeZoom 0.35s ease;
+    z-index: 9999;
+    text-align: center;
+    min-width: 280px;
+}
+.toast.success {
+    background: linear-gradient(135deg, #c0c0c5, #c8cddd);
+}
+
+.toast.error {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
 
 
-/* CONTENEDOR DEL CALENDARIO */
+/* CONTENEDOR DEL CALENDARIO DE PEDIATRIA*/
 .calendar-box {
-  background: linear-gradient( 145deg,  #0f36a4, #1a4fd3);
-  padding: 25px;
-  margin: 20px;
-  border-radius: 18px;
-  width: 258px;
+  background: linear-gradient(145deg, #0f36a4, #1a4fd3);
+  padding: 28px;
+  margin: 10px;
+  border-radius: 28px;
+  width: 270px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
   opacity: 0;
   animation: calendarFade 1s ease forwards;
 }
+
 @keyframes calendarFade {
   from {
     opacity: 0;
     transform: translateX(25px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-
-/* Ajuste del calendario de react-datepicker */
+/* calendario de react-datepicker */
 .react-datepicker {
   border: none;
   background: transparent;
@@ -834,7 +879,7 @@ select:focus {
 .react-datepicker__day {
   margin: 0.45rem;
   font-size: 0.9rem;
-  border-radius: 10px ;
+  border-radius: 10px;
   transition: all 0.25s ease;
   color: #f1f5ff;
 }
@@ -847,7 +892,7 @@ select:focus {
 
 /* Día seleccionado */
 .react-datepicker__day--selected {
-  background: linear-gradient( 135deg, #c7141d,  #8d1016);
+  background: linear-gradient(135deg, #c7141d, #8d1016);
   color: #fff;
   box-shadow: 0 8px 18px rgba(199, 20, 29, 0.45);
 }
@@ -864,6 +909,7 @@ select:focus {
   top: 14px;
   transition: transform 0.3s ease;
 }
+
 .react-datepicker__navigation:hover {
   transform: scale(1.2);
 }
@@ -871,20 +917,21 @@ select:focus {
 .react-datepicker__navigation-icon::before {
   border-color: #ffffff;
 }
+
 .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
   border-color:
-   #ffccd0;
+    #ffccd0;
 }
+
 /* Hover botones navegación */
 .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
   border-color: #a80000;
 }
 
 /*SECCION DE TABLA DE PEDIATRIA*/
-/*css de listar pacientes*/
 .pacientes-list-container {
   padding: 30px 40px;
-  background: linear-gradient(180deg, #85a0ce, #ffffff);
+  background: linear-gradient(180deg, #2538a3, #f0eded);
   min-height: 100vh;
   font-family: "Amarna-Italic", cursive;
 }
@@ -896,22 +943,18 @@ select:focus {
   align-items: center;
   margin-bottom: 30px;
   padding: 20px 25px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(19, 48, 82, 0.12);
-  animation: fadeDown 0.5s ease;
 }
 
 .pacientes-header h1 {
-  font-size: 26px;
+  font-size: 35px;
   font-weight: 900;
-  color: #0057b8;
+  color: #f5f5f5;
   margin: 0;
 }
 
 /* BOTÓN VOLVER */
 .btn-volver {
-  background: linear-gradient(135deg, #0057b8, #2f80ed);
+  background: linear-gradient(135deg, #e6e9ee, #2f80ed);
   color: #fff;
   border: none;
   padding: 10px 18px;
@@ -952,6 +995,7 @@ select:focus {
     opacity: 0;
     transform: translateY(-15px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -963,12 +1007,26 @@ select:focus {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-/*TABLA PACIENTES
+
+
+.fila-text {
+  background: linear-gradient(135deg, #071D49, #0b2a6f);
+}
+
+.fila-text th {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  padding: 14px 12px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
 
 /*TABLA*/
 table {
@@ -976,8 +1034,9 @@ table {
   border-collapse: separate;
   border-spacing: 0 10px;
 }
+
 .fila-paciente {
-  background: #e4dddd;
+  background: #dedde4;
   transition: all 0.3s ease;
 }
 
@@ -990,22 +1049,29 @@ table {
   background: #195ba7;
   box-shadow: 0 14px 35px rgba(0, 87, 184, 0.25);
 }
+
 /*celdas*/
 td {
   padding: 12px 14px;
   font-size: 14px;
-  color: #333;
+  color: #000000;
   text-align: center;
   vertical-align: middle;
 }
+
 .col-index {
   font-weight: 00;
   color: #0057b8;
 }
-.col-text,.col-phone,
-.col-address,.col-date,.col-dni {
-  color: #444;
+
+.col-text,
+.col-phone,
+.col-address,
+.col-date,
+.col-dni {
+  color: #000000;
 }
+
 .col-badge {
   text-align: center;
 }
@@ -1020,6 +1086,7 @@ td {
   outline: none;
   transition: all 0.3s ease;
 }
+
 .edit-input:focus,
 .edit-select:focus {
   border-color: #003f82;
@@ -1044,10 +1111,12 @@ td {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .btn-editar:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(0, 87, 184, 0.4);
 }
+
 /*eliminar*/
 .btn-eliminar {
   background: linear-gradient(135deg, #4f8ad8, #605ee2);
@@ -1059,10 +1128,82 @@ td {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .btn-eliminar:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(199, 166, 20, 0.45);
 }
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-confirm {
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+    animation: modalFade 0.35s ease;
+}
+
+.modal-confirm h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #0f172a;
+}
+
+.modal-confirm p {
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 22px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.btn-confirmar {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background: #e5e7eb;
+    color: #1f2933;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 /*guardar*/
 .btn-guardar {
@@ -1075,6 +1216,7 @@ td {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .btn-guardar:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(153, 74, 38, 0.4);
@@ -1091,19 +1233,19 @@ td {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .btn-cancelar:hover {
   background: #943f3f;
 }
 
 
 /*SECCIÓN DE GINECOLOGÍA  */
-
 .ginecologia-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
-  padding: 30px;
+  padding: 20px;
   opacity: 0;
   animation: gineFade 1s ease forwards;
 }
@@ -1113,6 +1255,7 @@ td {
     opacity: 0;
     transform: translateY(25px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1126,13 +1269,14 @@ td {
   height: 400px;
   border-radius: 50%;
   padding: 8px;
-  background: conic-gradient( from 0deg,  #c7141d, #8d1d1d,  #0057b8, #c7141d);
+  background: conic-gradient(from 0deg, #c7141d, #8d1d1d, #0057b8, #c7141d);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   animation: gineRotate 22s linear infinite;
 }
+
 .ginecologia-imagen {
   width: 100%;
   height: 100%;
@@ -1140,6 +1284,7 @@ td {
   border-radius: 50%;
   transition: all 0.5s ease;
 }
+
 .ginecologia-imagen-box:hover {
   animation-play-state: paused;
 }
@@ -1154,9 +1299,10 @@ td {
   order: 1;
   display: flex;
   flex-direction: column;
-  gap: 19px;
+  gap: 12px;
   width: 490px;
 }
+
 .ginecologia-container .form-input,
 .ginecologia-container .form-row input,
 .ginecologia-container select {
@@ -1182,6 +1328,7 @@ td {
   gap: 35px;
   margin-top: 10px;
 }
+
 .ginecologia-container .form-buttons button {
   padding: 11px 26px;
   background: linear-gradient(135deg, #c7141d, #8d1016);
@@ -1198,6 +1345,7 @@ td {
 .ginecologia-container .form-buttons button:hover {
   background: #a80000;
 }
+
 .ginecologia-container .form-buttons button {
   padding: 11px 26px;
   background: linear-gradient(135deg, #c7141d, #8d1016);
@@ -1209,23 +1357,26 @@ td {
   letter-spacing: 0.5px;
   transition: all 0.35s ease;
 }
+
 .ginecologia-container .form-buttons button:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(199, 20, 29, 0.45);
 }
+
 .ginecologia-container .form-buttons button:active {
   transform: scale(0.96);
 }
 
 
+
 /* Calendario Ginecología */
 .ginecologia-container .calendar-box {
   background: linear-gradient(145deg, #cc2b2b, #771212);
-  padding: 10px;
+  padding: 17px;
   margin: 10px;
   border-radius: 18px;
-  width: 300px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  width: 320px;
+  box-shadow: 0 38px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .ginecologia-container .react-datepicker__day {
@@ -1235,11 +1386,13 @@ td {
   transition: all 0.25s ease;
   color: #070303;
 }
+
 .ginecologia-container .react-datepicker__day-name {
   color: #c7141d;
   font-weight: bold;
   margin: 0.4rem;
 }
+
 .ginecologia-container .react-datepicker__day:hover {
   background: rgba(255, 255, 255, 0.18);
   transform: scale(1.1);
@@ -1250,11 +1403,11 @@ td {
   box-shadow: 0 8px 18px rgba(199, 20, 29, 0.5);
 }
 
-/* css pacientes registrados/tabla de ginecologia*/
+/*css pacientes registrados/tabla de ginecologia*/
 
 .pacientes-ginecologia-container {
-  padding: 40px;
-  background: linear-gradient(135deg, #8672f8, hsl(252, 31%, 85%));
+  padding: 36px;
+  background: linear-gradient(135deg, #180b8d, hsl(240, 12%, 87%));
   min-height: 100vh;
   font-family: "FiraSans", cursive;
 }
@@ -1290,6 +1443,7 @@ td {
   background: #342d77;
   transform: translateY(-2px);
 }
+
 /*NOPACIENTES*/
 .no-pacientes-ginecologia {
   margin-top: 80px;
@@ -1318,12 +1472,12 @@ td {
 }
 
 .tabla-ginecologia thead {
-  background: #1f0b7af8;
+  background: #160469;
 }
 
 .tabla-ginecologia th {
   padding: 14px;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: 600;
   text-align: center;
 }
@@ -1336,7 +1490,7 @@ td {
 }
 
 .tabla-ginecologia tbody tr {
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition: 0.2s ease, transform 0.15s ease;
 }
 
 .tabla-ginecologia tbody tr:hover {
@@ -1357,12 +1511,6 @@ td {
   font-size: 14px;
   outline: none;
   transition: all 0.2s ease;
-}
-
-.edit-input:focus,
-.edit-select:focus {
-  border-color: #8a1538;
-  box-shadow: 0 0 0 2px rgba(138, 21, 56, 0.2);
 }
 
 /*botones*/
@@ -1388,6 +1536,7 @@ td {
   background: #47340d;
   transform: translateY(-1px);
 }
+
 /*eliminar*/
 .btn-eliminar {
   background: #0a0c8d;
@@ -1404,6 +1553,7 @@ td {
   background: #3251b9;
   transform: translateY(-1px);
 }
+
 /*guardar*/
 .btn-guardar {
   background: #992929;
@@ -1436,7 +1586,14 @@ td {
   background: #9e9e9e;
 }
 
-
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg,
+      #0d4191,
+      #9190ca,
+      #c6cedd);
+  font-family: "Roboto", sans-serif;
+}
 
 /* SECCIÓN DE CONSULTORÍA MÉDICA*/
 
@@ -1446,6 +1603,7 @@ td {
   align-items: flex-start;
   gap: 30px;
   padding: 30px;
+
 }
 
 .consultoria-imagen-box {
@@ -1454,7 +1612,7 @@ td {
   height: 400px;
   border-radius: 50%;
   padding: 8px;
-  background: conic-gradient( from 0deg,  #c7141d, #8d1d1d,  #0057b8, #c7141d);
+  background: conic-gradient(from 0deg, #c7141d, #8d1d1d, #0057b8, #c7141d);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1470,121 +1628,132 @@ td {
   transition: all 0.5s ease;
 
 }
+
 .consultoria-imagen-box:hover {
   animation-play-state: paused;
 }
+
 .consultoria-imagen-box:hover .consultoria-imagen {
   transform: scale(1.05);
   filter: brightness(1.05) contrast(1.05);
 }
 
 /* Formulario Consultoría Médica */
-
 form {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 650px;
-    margin: auto;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 5px 10px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 650px;
+  margin: auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 5px 10px rgba(0, 0, 0, 0.06);
 }
 
-/* FILAS DOBLES */
+
 .form-row {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 18px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
 }
 
-/* INPUTS Y SELECT */
+
 input,
 select {
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 15px;
-    border-radius: 12px;
-    border: 1.5px solid #7194bd;
-    outline: none;
-    background: #f9fbfd;
-    transition: border-color 0.3s ease,
-      box-shadow 0.3s ease,
-      background 0.3s ease;
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1.5px solid #7194bd;
+  outline: none;
+  background: #f9fbfd;
+  transition: border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 /* EFECTO FOCUS */
 input:focus,
 select:focus {
-    border-color: #ffffff;
-    background: #ffffff;
-    box-shadow: 0 0 0 4px rgba(47, 128, 237, 0.15);
+  border-color: #ffffff;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(47, 128, 237, 0.15);
 }
 
 /* PLACEHOLDER */
 input::placeholder {
-    color: #9aa7b4;
+  color: #859aaf;
 }
 
 /* LABELS */
 label {
-    display: block;
-    margin: 16px 0 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #344054;
+  display: block;
+  margin: 16px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
 }
 
 /* SELECT */
 select {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 
 /* Calendario Consultoría Médica */
 .consultoria-container .calendar-box {
   background: #003f88f6;
-  padding: 20px;
+  padding: 30px;
   margin: 10px;
   border-radius: 15px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   width: 333px;
 }
+
 .consultoria-container .react-datepicker {
   border: none;
   font-family: 'Arial', sans-serif;
 }
+
 .consultoria-container .react-datepicker__day-name {
   color: #003f88;
   font-weight: bold;
   margin: 0.4rem;
 }
+
 .consultoria-container .react-datepicker__day {
   margin: 0.4rem;
   font-size: 0.9rem;
   border-radius: 8px !important;
 }
+
 .consultoria-container .react-datepicker__day:hover {
   background-color: #d6e6ff;
   color: #002a5c;
 }
+
 .consultoria-container .react-datepicker__day--selected {
   background-color: #0057b8 !important;
   color: white;
   border-radius: 8px;
 }
+
 .consultoria-container .react-datepicker__day--today {
   font-weight: bold;
   color: #003f88;
   border: 1px solid #003f88;
 }
+
 .consultoria-container .react-datepicker__navigation {
   top: 15px;
 }
+
 .consultoria-container .react-datepicker__navigation-icon::before {
   border-color: #003f88;
 }
+
 .consultoria-container .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
   border-color: #002a5c;
 }
+
 .consultoria-container label {
   color: #003f88;
   font-weight: 600;
@@ -1592,204 +1761,97 @@ select {
   margin-bottom: 5px;
 }
 
+/* consultoria medica */
 
-/*SECCIÓN DE PACIENTES REGISTRADOS/tabla*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
 
 .pacientes-consultoria-container {
-    max-width: 1400px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    animation: fadeIn 0.5s ease-in-out;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 35px 25px;
+  background: transparent;
 }
 
-/* HEADER */
 .pacientes-consultoria-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
 }
 
 .pacientes-consultoria-header h2 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #0d47a1;
-    margin: 0;
-    font-family: 'FiraSans', cursive;}
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  font-family: 'FiraSans', cursive;
+}
 
 .pacientes-consultoria-header button {
-    background: #284966;
-    color: #ffffff;
-    border: none;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: linear-gradient(135deg, #031c31, #062f55);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .pacientes-consultoria-header button:hover {
-    background: #868f9c;
-    transform: translateX(-3px);
-    box-shadow: 0 6px 15px rgba(30
-    , 136, 229, 0.4);
-}
-
-/*mensaje sin pacientes*/
-.pacientes-consultoria-container p {
-    text-align: center;
-    font-size: 16px;
-    color: #555;
-    padding: 20px;
+  background: linear-gradient(135deg, #062f55, #031c31);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .tabla-consultoria {
-    width: 100%;
-    border-collapse: collapse;
-    background:  #f1f1f1;
-    border-radius: 12px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
-/*cabecera*/
-
 .tabla-consultoria thead {
-    background: linear-gradient(  135deg,  #1e88e5, #0d47a1);
+  background: linear-gradient(135deg, #032a4d, #104da8);
 }
 
 .tabla-consultoria thead th {
-    padding: 14px 12px;
-    color: #ffffff;
-    font-size: 14px;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  padding: 16px 12px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.6px;
 }
-/*filas y celdas*/
-/* CUERPO DE TABLA*/
-.tabla-consultoria tbody tr {
-    transition: all 0.25s ease;
-}
+
 
 .tabla-consultoria tbody tr:hover {
-    background: #d3d9eb;
+  background: #eef2ff;
 }
+
 .tabla-consultoria tbody td {
-    padding: 12px;
-    font-size: 14px;
-    color: #1a1a1a;
-    text-align: center;
-    font-family: "RobotoCondensed", cursive;
-    border-bottom: 1px solid #e0e0e0;
+  padding: 14px 12px;
+  font-size: 14px;
+  color: #1a1a1a;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
 }
 
+.tabla-consultoria tbody tr:last-child td {
+  border-bottom: none;
+}
 
-/* BOTONES*/
 .btn-group {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
-
-.btn-group button {
-    border: none;
-    padding: 6px 12px;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-.editing-row .btn-group {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-}
-
-/*eliminar*/
-.btn-eliminar {
-    background: #e53935;
-    color: #ffffff;
-}
-
-.btn-eliminar:hover {
-    background: #b71c1c;
-    box-shadow: 0 4px 12px rgba(229, 57, 53, 0.4);
-    transform: translateY(-1px);
-}
-/*guardar*/
-
-.btn-guardar {
-    background: linear-gradient(
-        135deg,
-        #c4888e,
-        #912525
-    );
-    color: #ffffff;
-    padding: 7px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: 
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.btn-guardar:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 14px rgba(125, 46, 46, 0.4);
-}
-
-.btn-guardar:active {
-    transform: scale(0.96);
-}
-
-
-.btn-guardar:hover {
-    background: #974747;
-    box-shadow: 0 4px 12px rgba(199, 117, 117, 0.4);
-}
-/*cancelar*/
-.btn-cancelar {
-    background: linear-gradient(
-        135deg,
-        #424242,
-        #1a1a1a
-    );
-    color: #ffffff;
-    padding: 7px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: 
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.btn-cancelar:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-}
-
-.btn-cancelar:active {
-    transform: scale(0.96);
-}
-

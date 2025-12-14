@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import TablaPacientes from "../organisms/TablaPacientes";
 
 export default function PacientesList() {
+
+
+
     const [patients, setPatients] = useState(() => {
         const storedPatients = localStorage.getItem("patients");
         return storedPatients ? JSON.parse(storedPatients) : [];
@@ -10,13 +13,24 @@ export default function PacientesList() {
     const [editingIndex, setEditingIndex] = useState(null);
     const [editForm, setEditForm] = useState({});
 
+    // MODAL CONFIRMACIÓN
+    const [mostrarConfirmacion, setMostrarConfirmacion] = useState(false);
+    const [indiceAEliminar, setIndiceAEliminar] = useState(null);
+
+    // ABRE MODAL
     const eliminarPaciente = (index) => {
-        const confirmacion = window.confirm("¿Está seguro de eliminar este paciente?");
-        if (confirmacion) {
-            const updated = patients.filter((_, i) => i !== index);
-            localStorage.setItem("patients", JSON.stringify(updated));
-            setPatients(updated);
-        }
+        setIndiceAEliminar(index);
+        setMostrarConfirmacion(true);
+    };
+
+    // CONFIRMA ELIMINACIÓN
+    const confirmarEliminar = () => {
+        const updated = patients.filter((_, i) => i !== indiceAEliminar);
+        localStorage.setItem("patients", JSON.stringify(updated));
+        setPatients(updated);
+
+        setMostrarConfirmacion(false);
+        setIndiceAEliminar(null);
     };
 
     const editarPaciente = (index) => {
@@ -46,22 +60,26 @@ export default function PacientesList() {
         window.history.back();
     };
 
+    
     return (
         <div className="pacientes-list-container">
+
+            {/* HEADER */}
             <div className="pacientes-header">
-                <h1>Pacientes de Pediatria</h1>
+                <h1>Pacientes de Pediatría</h1>
                 <button onClick={volver} className="btn-volver">
                     ← Volver
                 </button>
             </div>
 
+            {/* CONTENIDO */}
             {patients.length === 0 ? (
                 <div className="no-pacientes">
-                    <p> No hay pacientes registrados</p>
+                    <p>No hay pacientes registrados</p>
                 </div>
             ) : (
-                <TablaPacientes 
-                    patients={patients} 
+                <TablaPacientes
+                    patients={patients}
                     onEliminar={eliminarPaciente}
                     onEditar={editarPaciente}
                     editingIndex={editingIndex}
@@ -71,6 +89,32 @@ export default function PacientesList() {
                     onCancelar={cancelarEdicion}
                 />
             )}
+
+            {/* MODAL CONFIRMACIÓN */}
+            {mostrarConfirmacion && (
+                <div className="modal-overlay">
+                    <div className="modal-confirm">
+                        <h3>Confirmar eliminación</h3>
+                        <p>¿Está seguro de eliminar este paciente?</p>
+
+                        <div className="modal-buttons">
+                            <button
+                                className="btn-confirmar"
+                                onClick={confirmarEliminar}
+                            >
+                                Aceptar
+                            </button>
+                            <button
+                                className="btn-cancelar"
+                                onClick={() => setMostrarConfirmacion(false)}
+                            >
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 }
