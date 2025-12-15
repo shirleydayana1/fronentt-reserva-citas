@@ -13,17 +13,17 @@ export default function PacientesList() {
     const [editingIndex, setEditingIndex] = useState(null);
     const [editForm, setEditForm] = useState({});
 
-    // MODAL CONFIRMACIÓN
+    
     const [mostrarConfirmacion, setMostrarConfirmacion] = useState(false);
     const [indiceAEliminar, setIndiceAEliminar] = useState(null);
 
-    // ABRE MODAL
+    
     const eliminarPaciente = (index) => {
         setIndiceAEliminar(index);
         setMostrarConfirmacion(true);
     };
 
-    // CONFIRMA ELIMINACIÓN
+    
     const confirmarEliminar = () => {
         const updated = patients.filter((_, i) => i !== indiceAEliminar);
         localStorage.setItem("patients", JSON.stringify(updated));
@@ -64,7 +64,7 @@ export default function PacientesList() {
     return (
         <div className="pacientes-list-container">
 
-            {/* HEADER */}
+          
             <div className="pacientes-header">
                 <h1>Pacientes de Pediatría</h1>
                 <button onClick={volver} className="btn-volver">
@@ -72,7 +72,7 @@ export default function PacientesList() {
                 </button>
             </div>
 
-            {/* CONTENIDO */}
+          
             {patients.length === 0 ? (
                 <div className="no-pacientes">
                     <p>No hay pacientes registrados</p>
@@ -90,7 +90,7 @@ export default function PacientesList() {
                 />
             )}
 
-            {/* MODAL CONFIRMACIÓN */}
+           
             {mostrarConfirmacion && (
                 <div className="modal-overlay">
                     <div className="modal-confirm">

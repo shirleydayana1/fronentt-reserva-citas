@@ -1,9 +1,9 @@
 import React from "react";
 import FilaPaciente from "../molecules/FilaPaciente";
 
-export default function TablaPacientes({ 
-    patients, 
-    onEliminar, 
+export default function TablaPacientes({
+    patients,
+    onEliminar,
     onEditar,
     editingIndex,
     editForm,

@@ -24,6 +24,9 @@ export default function Ginecologia() {
         JSON.parse(localStorage.getItem("ginecologia_patients")) || []
     );
 
+
+    const [showSuccess, setShowSuccess] = useState(false);
+
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -43,7 +46,11 @@ export default function Ginecologia() {
 
         setPatients(updated);
 
-        alert("Paciente agregado correctamente ✅");
+
+        setShowSuccess(true);
+        setTimeout(() => {
+            setShowSuccess(false);
+        }, 3000);
 
         setForm({
             nombre: "",
@@ -56,14 +63,21 @@ export default function Ginecologia() {
         });
     };
 
- 
     const verPacientes = () => {
         navigate("/pacientes-ginecologia");
     };
 
     return (
         <div className="ginecologia-container">
-            {/* IMAGEN */}
+
+
+            {showSuccess && (
+                <div className="success-toast">
+                    Paciente agregado correctamente
+                </div>
+            )}
+
+
             <div className="ginecologia-imagen-box">
                 <img
                     src="/img/Ginecologia.jpg"
@@ -72,18 +86,18 @@ export default function Ginecologia() {
                 />
             </div>
 
-            {/* CALENDARIO */}
+
             <div className="calendar-box">
                 <DatePicker
                     selected={new Date()}
-                    onChange={() => {}}
+                    onChange={() => { }}
                     inline
                     locale="es"
                     dateFormat="dd 'de' MMM yyy"
                 />
             </div>
 
-            {/* FORMULARIO */}
+
             <div className="form-box">
                 <div className="form-row">
                     <input

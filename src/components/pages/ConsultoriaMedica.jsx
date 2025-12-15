@@ -24,6 +24,9 @@ export default function ConsultoriaMedica() {
         JSON.parse(localStorage.getItem("consultoria_patients")) || []
     );
 
+
+    const [showSuccess, setShowSuccess] = useState(false);
+
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -43,7 +46,10 @@ export default function ConsultoriaMedica() {
         localStorage.setItem("consultoria_patients", JSON.stringify(updated));
         setPatients(updated);
 
-        alert("Paciente agregado correctamente");
+        setShowSuccess(true);
+        setTimeout(() => {
+            setShowSuccess(false);
+        }, 3000);
 
         setForm({
             nombre: "",
@@ -63,7 +69,14 @@ export default function ConsultoriaMedica() {
     return (
         <div className="consultoria-container">
 
-            
+
+            {showSuccess && (
+                <div className="success-toast">
+                    Paciente agregado correctamente
+                </div>
+            )}
+
+
             <div className="consultoria-imagen-box">
                 <img
                     src="/img/consultoria.jpg"
@@ -72,18 +85,18 @@ export default function ConsultoriaMedica() {
                 />
             </div>
 
+
             <div className="calendar-box">
                 <DatePicker
                     selected={new Date()}
-                    onChange={() => {}}
+                    onChange={() => { }}
                     inline
                     locale="es"
                 />
             </div>
 
-            
-            <div className="form-box">
 
+            <div className="form-box">
                 <div className="form-row">
                     <input
                         name="nombre"
@@ -145,7 +158,6 @@ export default function ConsultoriaMedica() {
                     <button onClick={agregarPaciente}>Agregar</button>
                     <button onClick={verPacientes}>Ver</button>
                 </div>
-
             </div>
         </div>
     );

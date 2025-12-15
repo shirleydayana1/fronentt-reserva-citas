@@ -14,28 +14,28 @@ export default function Dashboard() {
 
     useEffect(() => {
         const userData = localStorage.getItem('user')
-        
-        
+
+
         if (!userData || userData === 'undefined' || userData === 'null') {
             navigate('/')
             return
         }
 
-   
+
         try {
             const parsedUser = JSON.parse(userData)
-            
-           
+
+
             if (parsedUser && parsedUser.email) {
                 setUser(parsedUser)
             } else {
-              
+
                 localStorage.removeItem('user')
                 navigate('/')
             }
         } catch (error) {
             console.error('Error al cargar usuario:', error)
-          
+
             localStorage.removeItem('user')
             navigate('/')
         } finally {
@@ -49,30 +49,30 @@ export default function Dashboard() {
         navigate('/')
     }
 
- 
+
     if (loading) {
         return <div style={{ padding: '2rem', textAlign: 'center' }}>Cargando...</div>
     }
 
-    
+
     if (!user) {
         return null
     }
 
-      return (
+    return (
         <div className="dashboard-root">
             <Navbar user={user} onLogout={handleLogout} onSelect={setSection} />
-              <main className="dashboard-content">
+            <main className="dashboard-content">
 
-                  {section === 'HOME' && <Home user={user} />}
+                {section === 'HOME' && <Home user={user} />}
 
-                  {section === 'PEDIATRIA' && <Pediatria />}
+                {section === 'PEDIATRIA' && <Pediatria />}
 
-                  {section === 'GINECOLOGIA' && <Ginecologia/>}
+                {section === 'GINECOLOGIA' && <Ginecologia />}
 
-                  {section === 'CONSULTORIA' && <ConsultoriaMedica/>}
-              </main>
-          
+                {section === 'CONSULTORIA' && <ConsultoriaMedica />}
+            </main>
+
         </div>
     )
 }

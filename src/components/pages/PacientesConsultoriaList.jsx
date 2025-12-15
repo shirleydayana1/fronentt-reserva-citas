@@ -23,7 +23,7 @@ export default function PacientesConsultoriaList() {
         setEditForm({ ...patients[index] });
     };
 
-    
+
     const onEditChange = (e) => {
         const { name, value } = e.target;
         setEditForm((prev) => ({

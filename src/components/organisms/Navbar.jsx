@@ -5,8 +5,8 @@ export default function Navbar({ user, onLogout, onSelect }) {
     const ref = useRef()
 
     useEffect(() => {
-        function click(e) { 
-            if (ref.current && !ref.current.contains(e.target)) setOpen(false) 
+        function click(e) {
+            if (ref.current && !ref.current.contains(e.target)) setOpen(false)
         }
         document.addEventListener('click', click)
         return () => document.removeEventListener('click', click)

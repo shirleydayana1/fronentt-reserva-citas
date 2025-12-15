@@ -76,12 +76,12 @@ export default function Pediatria() {
                 </div>
             )}
 
-            {/* IMAGEN */}
+        
             <div className="pediatria-imagen-box">
                 <img src="/img/pediatria.jpg" alt="Pediatria" className="pediatria-imagen" />
             </div>
 
-           { /* CALENDARIO */}
+     
             <div className="calendar-box">
                 <DatePicker
                     selected={new Date()}
@@ -92,7 +92,7 @@ export default function Pediatria() {
                 />
             </div>
 
-            {/* FORMULARIO */}
+            
             <div className="form-box">
 
                 <div className="form-row">
@@ -101,7 +101,7 @@ export default function Pediatria() {
                 </div>
 
                 <div className="form-row">
-                    <input name="dni" value={form.dni} onChange={handleChange} placeholder="DNI" />
+                    <input name="dni" value={form.dni} onChange={handleChange}c="DNI" />
                     <input name="telefono" value={form.telefono} onChange={handleChange} placeholder="Teléfono" />
                 </div>
 

@@ -13,21 +13,28 @@ export default function PacientesGinecologiaList() {
     const [editingIndex, setEditingIndex] = useState(null);
     const [editForm, setEditForm] = useState({});
 
-    // ELIMINAR
-    const eliminarPaciente = (index) => {
-        const confirmacion = window.confirm(
-            "¿Está seguro de eliminar este paciente ginecológico?"
-        );
+   
+    const [showConfirm, setShowConfirm] = useState(false);
+    const [deleteIndex, setDeleteIndex] = useState(null);
 
-        if (confirmacion) {
-            const updated = patients.filter((_, i) => i !== index);
-            localStorage.setItem("ginecologia_patients", JSON.stringify(updated));
-            setPatients(updated);
-        }
+   
+    const eliminarPaciente = (index) => {
+        setDeleteIndex(index);
+        setShowConfirm(true);
+    };
+
+    const confirmarEliminacion = () => {
+        const updated = patients.filter((_, i) => i !== deleteIndex);
+
+        localStorage.setItem("ginecologia_patients", JSON.stringify(updated));
+        setPatients(updated);
+
+        setShowConfirm(false);
+        setDeleteIndex(null);
     };
 
     // EDITAR
-    const  editarPaciente = (index) => {
+    const editarPaciente = (index) => {
         setEditingIndex(index);
         setEditForm({ ...patients[index] });
     };
@@ -50,7 +57,6 @@ export default function PacientesGinecologiaList() {
         setEditForm({});
     };
 
-    // CAMBIOS EN INPUTS
     const handleEditChange = (e) => {
         const { name, value } = e.target;
         setEditForm({ ...editForm, [name]: value });
@@ -84,6 +90,34 @@ export default function PacientesGinecologiaList() {
                     onGuardar={guardarEdicion}
                     onCancelar={cancelarEdicion}
                 />
+            )}
+
+            {/* MODAL DE CONFIRMACIÓN */}
+            {showConfirm && (
+                <div className="confirm-overlay">
+                    <div className="confirm-modal">
+                        <h3>Confirmar eliminación</h3>
+                        <p>
+                            ¿Está seguro de eliminar este paciente?
+                        </p>
+
+                        <div className="confirm-buttons">
+                        
+                            <button
+                                className="btn-delete"
+                                onClick={confirmarEliminacion}
+                            >
+                                Aceptar
+                            </button>
+                            <button
+                                className="btn-cancel"
+                                onClick={() => setShowConfirm(false)}
+                            >
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
             )}
         </div>
     );

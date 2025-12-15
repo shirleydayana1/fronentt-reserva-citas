@@ -1,5 +1,4 @@
-// No necesita importar nada
-import React from "react";
+
 
 export default function BadgeTipoCita({ tipo }) {
     return (

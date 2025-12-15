@@ -63,7 +63,7 @@ body {
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
   font-family: "FiraSans";
-  background: linear-gradient(135deg, #dcdfee 0%, #16139b 50%, #f093fb 100%);
+  background: linear-gradient(135deg, #e4e5ee 0%, #403de7 50%, #fafafa 100%);
   position: relative;
   overflow: hidden;
 }
@@ -268,7 +268,7 @@ body {
   font-weight: 400;
 }
 
-/* Botón mejorado */
+/* Botón */
 .right-panel button {
   width: 100%;
   padding: 1.125rem;
@@ -404,7 +404,6 @@ button {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
-
 
 
 /* PERFIL*/
@@ -797,39 +796,42 @@ select:focus {
 }
 
 .toast {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    padding: 18px 26px;
-    border-radius: 14px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #000000;
+  padding: 18px 26px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
 
-    box-shadow: 0 15px 35px rgba(5, 5, 5, 0.45);
-    animation: fadeZoom 0.35s ease;
-    z-index: 9999;
-    text-align: center;
-    min-width: 280px;
+  box-shadow: 0 15px 35px rgba(5, 5, 5, 0.45);
+  animation: fadeZoom 0.35s ease;
+  z-index: 9999;
+  text-align: center;
+  min-width: 280px;
 }
+
 .toast.success {
-    background: linear-gradient(135deg, #c0c0c5, #c8cddd);
+  background: linear-gradient(135deg, #c0c0c5, #c8cddd);
 }
 
 .toast.error {
-    background: linear-gradient(135deg, #dc2626, #ef4444);
+  background: linear-gradient(135deg, #dc2626, #ef4444);
 }
+
 @keyframes fadeZoom {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -60%) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 
@@ -931,7 +933,7 @@ select:focus {
 /*SECCION DE TABLA DE PEDIATRIA*/
 .pacientes-list-container {
   padding: 30px 40px;
-  background: linear-gradient(180deg, #2538a3, #f0eded);
+  background: linear-gradient(180deg, #77787e, #f0eded);
   min-height: 100vh;
   font-family: "Amarna-Italic", cursive;
 }
@@ -947,8 +949,8 @@ select:focus {
 
 .pacientes-header h1 {
   font-size: 35px;
-  font-weight: 900;
-  color: #f5f5f5;
+  font-weight: 550;
+  color: #000000;
   margin: 0;
 }
 
@@ -1135,73 +1137,74 @@ td {
 }
 
 .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
 }
 
 .modal-confirm {
-    background: #ffffff;
-    padding: 28px 32px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.45);
-    animation: modalFade 0.35s ease;
+  background: #ffffff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  animation: modalFade 0.35s ease;
 }
 
 .modal-confirm h3 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    color: #0f172a;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #0f172a;
 }
 
 .modal-confirm p {
-    font-size: 15px;
-    color: #475569;
-    margin-bottom: 22px;
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 22px;
 }
 
 .modal-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
 }
 
 .btn-confirmar {
-    background: linear-gradient(135deg, #dc2626, #ef4444);
-    color: #ffffff;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .btn-cancelar {
-    background: #e5e7eb;
-    color: #1f2933;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
+  background: #e5e7eb;
+  color: #1f2933;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 @keyframes modalFade {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
@@ -1367,6 +1370,34 @@ td {
   transform: scale(0.96);
 }
 
+.success-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #b5bde9, #a5bee4);
+  color: #050101;
+  padding: 18px 28px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  animation: zoomIn 0.35s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 
 
 /* Calendario Ginecología */
@@ -1403,13 +1434,13 @@ td {
   box-shadow: 0 8px 18px rgba(199, 20, 29, 0.5);
 }
 
-/*css pacientes registrados/tabla de ginecologia*/
 
+/*css pacientes registrados/tabla de ginecologia*/
 .pacientes-ginecologia-container {
   padding: 36px;
-  background: linear-gradient(135deg, #180b8d, hsl(240, 12%, 87%));
+  background: linear-gradient(165deg, #807e8be7, hsl(240, 12%, 87%));
   min-height: 100vh;
-  font-family: "FiraSans", cursive;
+  font-family: "Amarna-Italic", cursive;
 }
 
 .pacientes-ginecologia-header {
@@ -1422,7 +1453,7 @@ td {
 .pacientes-ginecologia-header h1 {
   font-size: 38px;
   font-weight: 750;
-  color: #ffffff;
+  color: #000000;
   letter-spacing: 0.5px;
 }
 
@@ -1554,6 +1585,53 @@ td {
   transform: translateY(-1px);
 }
 
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(32, 32, 32, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-modal {
+  background: #ffffff;
+  color: #222020;
+  padding: 23px 12px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  animation: scaleIn 0.3s ease;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  margin-top: 22px;
+}
+
+.btn-cancel {
+  background: #b8b5b5;
+  color: #050505;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #c0392b, #915048);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
 /*guardar*/
 .btn-guardar {
   background: #992929;
@@ -1586,26 +1664,16 @@ td {
   background: #9e9e9e;
 }
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(180deg,
-      #0d4191,
-      #9190ca,
-      #c6cedd);
-  font-family: "Roboto", sans-serif;
-}
+
 
 /* SECCIÓN DE CONSULTORÍA MÉDICA*/
-
 .consultoria-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
   padding: 30px;
-
 }
-
 .consultoria-imagen-box {
   order: 2;
   width: 400px;
@@ -1701,11 +1769,11 @@ select {
 /* Calendario Consultoría Médica */
 .consultoria-container .calendar-box {
   background: #003f88f6;
-  padding: 30px;
+  padding: 25px;
   margin: 10px;
   border-radius: 15px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  width: 333px;
+  width: 300px;
 }
 
 .consultoria-container .react-datepicker {
@@ -1721,7 +1789,7 @@ select {
 
 .consultoria-container .react-datepicker__day {
   margin: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   border-radius: 8px !important;
 }
 
@@ -1743,7 +1811,7 @@ select {
 }
 
 .consultoria-container .react-datepicker__navigation {
-  top: 15px;
+  top: 7px;
 }
 
 .consultoria-container .react-datepicker__navigation-icon::before {
@@ -1761,7 +1829,12 @@ select {
   margin-bottom: 5px;
 }
 
-/* consultoria medica */
+/*tabla consultoria medica */
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #666c75, #757583, #c6cedd);
+  font-family: "Roboto", sans-serif;
+}
 
 html,
 body {
@@ -1769,7 +1842,6 @@ body {
   height: 100%;
   margin: 0;
 }
-
 
 .pacientes-consultoria-container {
   max-width: 1400px;
@@ -1787,15 +1859,16 @@ body {
 
 .pacientes-consultoria-header h2 {
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: 1px;
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
-  font-family: 'FiraSans', cursive;
+  font-family: 'Amarna-Italic', cursive;
 }
 
+/*boton volver*/
 .pacientes-consultoria-header button {
-  background: linear-gradient(135deg, #031c31, #062f55);
+  background: linear-gradient(135deg, #2b6ea5, #062f55);
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -1807,7 +1880,7 @@ body {
 }
 
 .pacientes-consultoria-header button:hover {
-  background: linear-gradient(135deg, #062f55, #031c31);
+  background: linear-gradient(135deg, #93abc2, #031c31);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
@@ -1821,7 +1894,7 @@ body {
 }
 
 .tabla-consultoria thead {
-  background: linear-gradient(135deg, #032a4d, #104da8);
+  background: linear-gradient(135deg, #12304b, #104da8);
 }
 
 .tabla-consultoria thead th {

@@ -23,7 +23,7 @@ export default function TablaPacientesGinecologia({
                         <th>Dirección</th>
                         <th>Fecha y Hora</th>
                         <th>Tipo de Cita</th>
-                        <th>Acciones</th> 
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
