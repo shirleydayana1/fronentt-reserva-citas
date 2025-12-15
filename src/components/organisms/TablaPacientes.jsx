@@ -15,7 +15,7 @@ export default function TablaPacientes({
         <div className="tabla-wrapper">
             <div className="tabla-container">
                 <table className="tabla-pacientes">
-                    <thead>
+                    <thead className="fila-text">
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>

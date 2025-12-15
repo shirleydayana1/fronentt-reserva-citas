@@ -136,9 +136,7 @@ export default function FilaPaciente({
         );
     }
 
-    /* ======================
-       MODO NORMAL
-    ====================== */
+    
     return (
         <tr className="fila-paciente">
             <td className="col-index">{index + 1}</td>
